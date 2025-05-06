@@ -10,7 +10,8 @@ class HotelRepository {
             Hotel(3, "Mountain Escape", "Denver", "https://via.placeholder.com/150", 99.0, 4.7f)
         )
     }
-}
-fun getHotelById(id: Int): Hotel? {
-    return getHotels().find { it.id == id }
+
+    fun getHotelById(id: Int): Hotel? {
+        return getHotels().find { it.id == id }
+    }
 }

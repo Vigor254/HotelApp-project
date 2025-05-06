@@ -1,18 +1,22 @@
 package com.vigor.hotelapp.viewmodel
 
-import android.app.Application
-import androidx.lifecycle.*
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import com.vigor.hotelapp.data.BookingRepository
-
 import com.vigor.hotelapp.data.local.BookingEntity
+import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class BookingViewModel(application: Application) : AndroidViewModel(application) {
+@HiltViewModel
+class BookingViewModel @Inject constructor(
+    private val repository: BookingRepository
+) : ViewModel() {
 
-    private val repository = BookingRepository(application)
-
-    private val _bookings = MutableLiveData<List<BookingEntity>>()
-    val bookings: LiveData<List<BookingEntity>> = _bookings
+    private val _bookings = MutableStateFlow<List<BookingEntity>>(emptyList())
+    val bookings: StateFlow<List<BookingEntity>> = _bookings
 
     fun fetchBookings() {
         viewModelScope.launch {
@@ -23,8 +27,7 @@ class BookingViewModel(application: Application) : AndroidViewModel(application)
     fun addBooking(booking: BookingEntity) {
         viewModelScope.launch {
             repository.addBooking(booking)
-            fetchBookings() // Refresh after adding
+            fetchBookings()
         }
     }
 }
-

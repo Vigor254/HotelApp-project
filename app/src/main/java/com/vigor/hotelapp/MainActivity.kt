@@ -15,13 +15,13 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             HotellapTheme {
-                MainApp()
+                hotelapp()
             }
         }
     }
 
     @Composable
-    fun MainApp() {
+    fun hotelapp() {
         val navController = rememberNavController()
         AppNavHost(navController = navController)
     }

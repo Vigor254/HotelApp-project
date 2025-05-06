@@ -1,11 +1,9 @@
 package com.vigor.hotelapp.data
 
-import android.content.Context
-import com.vigor.hotelapp.data.local.AppDatabase
+import com.vigor.hotelapp.data.local.BookingDao
 import com.vigor.hotelapp.data.local.BookingEntity
 
-class BookingRepository(context: Context) {
-    private val bookingDao = AppDatabase.Companion.getDatabase(context).bookingDao()
+class BookingRepository(private val bookingDao: BookingDao) {
 
     suspend fun addBooking(booking: BookingEntity) {
         bookingDao.insertBooking(booking)

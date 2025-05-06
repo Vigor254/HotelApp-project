@@ -3,6 +3,7 @@ package com.vigor.hotelapp.di
 import android.content.Context
 import com.vigor.hotelapp.data.BookingRepository
 import com.vigor.hotelapp.data.local.AppDatabase
+import com.vigor.hotelapp.data.local.BookingDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -22,7 +23,13 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideBookingRepository(database: AppDatabase): BookingRepository {
-        return BookingRepository(database.bookingDao())
+    fun provideBookingDao(database: AppDatabase): BookingDao {
+        return database.bookingDao()
+    }
+
+    @Provides
+    @Singleton
+    fun provideBookingRepository(bookingDao: BookingDao): BookingRepository {
+        return BookingRepository(bookingDao)
     }
 }

@@ -6,9 +6,11 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.vigor.hotelapp.data.local.BookingEntity
 import com.vigor.hotelapp.viewmodel.BookingViewModel
 
@@ -79,4 +81,10 @@ fun BookingItem(booking: BookingEntity) {
             )
         }
     }
+}
+
+@Preview
+@Composable
+private fun ProfileScreenPrev(){
+    ProfileScreen(rememberNavController())
 }

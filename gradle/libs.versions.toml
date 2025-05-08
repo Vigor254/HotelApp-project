@@ -8,16 +8,26 @@ hiltAndroid = "2.49"
 hiltAndroidVersion = "2.48"
 hiltCompiler = "2.48"
 hiltNavigationCompose = "1.2.0"
-kotlin = "2.0.0"
+
 coreKtx = "1.16.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
 espressoCore = "3.6.1"
 lifecycleRuntimeKtx = "2.8.7"
 activityCompose = "1.10.1"
-composeBom = "2024.09.00"
+
 navigationCompose = "2.8.9"
 roomRuntime = "2.7.1"
+androidGradlePlugin = "8.6.0"
+kotlin = "2.0.20"
+hilt = "2.48"
+composeBom = "2024.06.00"
+composeCompiler = "1.6.0"
+retrofit = "2.11.0"
+coil = "2.4.0"
+room = "2.6.1"
+ksp = "2.0.20-1.0.24"
+
 
 [libraries]
 androidx-activity-compose-v180 = { module = "androidx.activity:activity-compose", version.ref = "activityComposeVersion" }
@@ -51,9 +61,10 @@ androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "converterGson" }
 
+
 [plugins]
-android-application = { id = "com.android.application", version.ref = "agp" }
+android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
-compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin"}
-
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }

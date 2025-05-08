@@ -2,7 +2,7 @@ plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.hilt) // Use the version catalog alias
+    alias(libs.plugins.hilt)
     alias(libs.plugins.ksp)
 }
 

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "450120904432",
+    "project_id": "hotel-project-3c222",
+    "storage_bucket": "hotel-project-3c222.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:450120904432:android:f8fd731ee1a6634ec41c35",
+        "android_client_info": {
+          "package_name": "com.vigor.hotelapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD0F_qF2qj5N8HWiTE0setnalD8g39inGY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
